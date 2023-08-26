@@ -1,0 +1,1731 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "Trial Dashboard to understand grafana basics",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "datasource": {
+        "type": "mssql",
+        "uid": "InterFlex"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 32,
+      "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "mssql",
+            "uid": "InterFlex"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Access Control ",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-orange",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 12,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "hide": false,
+          "rawSql": "SELECT count(*)\nFROM IF_IF_portdef;",
+          "refId": "A"
+        }
+      ],
+      "title": "Count of Controllers",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-orange",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 22,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "select count(distinct DOORID) from CUSTOM_InOutAccessData",
+          "refId": "A"
+        }
+      ],
+      "title": "Count of Doors",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-orange",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 8,
+        "y": 1
+      },
+      "id": 14,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "SELECT count(*)\nFROM if_if_tdf",
+          "refId": "A"
+        }
+      ],
+      "title": "Count of Readers",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "min": -1
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "offline"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "online"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 1
+      },
+      "id": 18,
+      "options": {
+        "displayLabels": [
+          "value",
+          "name"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true,
+          "values": [
+            "value"
+          ]
+        },
+        "pieType": "donut",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "SELECT count(*) online, (select count(*) from IF_IF_tdf)-count(*) offline\nFROM (\n    SELECT zutdno AS ID,\n           zrtddesc AS Reader,\n           zudate AS Date,\n           CASE\n               WHEN zuevent = 17 THEN 'Offline'\n               WHEN zuevent = 18 THEN 'Online'\n           END AS Status,\n           ROW_NUMBER() OVER (PARTITION BY zutdno\nORDER BY zudate DESC) AS RowNum\n    FROM IF_IF_accessarchive\n\nWHERE zuevent IN (17, 18) and zutdno !=3\n) t\nWHERE RowNum = 1 and t.Status = 'Online'",
+          "refId": "A"
+        }
+      ],
+      "title": "Readers Pie Chart",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "offline"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "online"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 1
+      },
+      "id": 16,
+      "options": {
+        "displayLabels": [
+          "value",
+          "name"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true,
+          "values": [
+            "value"
+          ]
+        },
+        "pieType": "donut",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "SELECT count(*) online, (select count(*) from if_if_portdef)-count(*) offline\nFROM (\n    SELECT LEFT(zucomment, 1) AS Controller,\n           MAX(zudate) AS Date,\n           CASE\n               WHEN zuevent = 120 THEN 'Offline'\n               WHEN zuevent = 121 THEN 'Online'\n           END AS Status\n    FROM IF_IF_accessarchive\n    WHERE zucomment != ' ' AND (zuevent = 120 OR zuevent = 121)\n    GROUP BY LEFT(zucomment, 1), zuevent\n) t\nINNER JOIN (\n    SELECT LEFT(zucomment, 1) AS Controller,\n           MAX(zudate) AS MaxDate\n    FROM IF_IF_accessarchive\n    WHERE zucomment != ' ' AND (zuevent = 120 OR zuevent = 121)\n    GROUP BY LEFT(zucomment, 1)\n) m ON t.Controller = m.Controller AND t.Date = m.MaxDate\nwhere t.Status='Online'",
+          "refId": "A"
+        }
+      ],
+      "title": "Controller Pie Chart",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "min": 1,
+          "noValue": "Status Unknown",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Status"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#FF9830",
+                  "mode": "continuous-RdYlGr"
+                }
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "Online": {
+                        "color": "green",
+                        "index": 0,
+                        "text": "Online"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^Status$/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "SELECT t.Controller, t.Date, t.Status\nFROM (\n    SELECT LEFT(zucomment, 1) AS Controller,\n           MAX(zudate) AS Date,\n           CASE\n               WHEN zuevent = 120 THEN 'Offline'\n               WHEN zuevent = 121 THEN 'Online'\n           END AS Status\n    FROM IF_IF_accessarchive\n    WHERE zucomment != ' ' AND (zuevent = 120 OR zuevent = 121)\n    GROUP BY LEFT(zucomment, 1), zuevent\n) t\nINNER JOIN (\n    SELECT LEFT(zucomment, 1) AS Controller,\n           MAX(zudate) AS MaxDate\n    FROM IF_IF_accessarchive\n    WHERE zucomment != ' ' AND (zuevent = 120 OR zuevent = 121)\n    GROUP BY LEFT(zucomment, 1)\n) m ON t.Controller = m.Controller AND t.Date = m.MaxDate;",
+          "refId": "A"
+        }
+      ],
+      "title": "Controller Status",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-purple"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 6,
+        "x": 0,
+        "y": 14
+      },
+      "id": 24,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "select count(zuevent) Count_Button_release, zrtddesc Reader from IF_IF_accessarchive\nwhere zuevent=22 and CONVERT(VARCHAR(10), zudate, 105)=CONVERT(VARCHAR(10), DATEADD(DAY, 0, GETDATE()), 105)\ngroup by zrtddesc\n\n",
+          "refId": "A"
+        }
+      ],
+      "title": "Count of Button Release Events",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "fillOpacity": 86,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 0,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#000000"
+              },
+              {
+                "color": "dark-orange",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "R_num"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Count_access_events"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "REader_number"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Reader_number"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 18,
+        "x": 6,
+        "y": 14
+      },
+      "id": 26,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.96,
+        "groupWidth": 0.73,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "select distinct zutdno Reader_number,zrtddesc Reader,count(*)  Count_access_events from IF_IF_accessarchive\nwhere zuevent=124\nand CONVERT(VARCHAR(10), zuutcentrydate, 105)=CONVERT(VARCHAR(10), DATEADD(DAY, 0, GETDATE()), 105)\ngroup by zrtddesc,zutdno",
+          "refId": "A"
+        }
+      ],
+      "title": "Daily Access Events Door-wise",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisLabel": "Count",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "axisWidth": 0,
+            "fillOpacity": 47,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Controller"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "Buzzer Test": {
+                        "color": "dark-orange",
+                        "index": 1
+                      },
+                      "Demo Room Controller": {
+                        "color": "dark-green",
+                        "index": 6
+                      },
+                      "Main Door Controller": {
+                        "color": "super-light-red",
+                        "index": 5
+                      },
+                      "Office Entry Controller": {
+                        "color": "dark-purple",
+                        "index": 3
+                      },
+                      "OfficeRight Side Controller": {
+                        "color": "dark-blue",
+                        "index": 4
+                      },
+                      "Server Room Controller 1": {
+                        "color": "semi-dark-red",
+                        "index": 2
+                      },
+                      "Testing": {
+                        "color": "dark-yellow",
+                        "index": 0
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "id": 20,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.56,
+        "colorByField": "Controller",
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [
+            "allValues"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "vertical",
+        "showValue": "never",
+        "stacking": "none",
+        "text": {
+          "valueSize": 1
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "asc"
+        },
+        "xField": "Reader",
+        "xTickLabelMaxLength": 0,
+        "xTickLabelRotation": 45,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "SELECT \"source\".\"Reader\" AS \"Reader\", \"source\".\"Controller\" AS \"Controller\", count(*) AS \"count\"\nFROM (select iit.tddesc Reader, iip.podesc Controller\nfrom IF_IF_tdf iit\n    left join IF_IF_portdef iip on iip.guid = iit.portdor) \"source\"\nGROUP BY \"source\".\"Reader\", \"source\".\"Controller\"\nORDER BY \"source\".\"Reader\" ASC, \"source\".\"Controller\" ASC\n\n",
+          "refId": "A"
+        }
+      ],
+      "title": "Readers List(Controllers included)",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "mode": "gradient",
+              "type": "color-background"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#ffffff"
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Controller"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 199
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Date"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 177
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Status"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "Offline": {
+                        "color": "red",
+                        "index": 1
+                      },
+                      "Online": {
+                        "color": "green",
+                        "index": 0
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.width",
+                "value": 145
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ID"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 61
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 10,
+        "x": 0,
+        "y": 32
+      },
+      "id": 10,
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "SELECT t.Controller ID,ip.podesc Controller, t.Date, t.Status\nFROM (\n    SELECT LEFT(zucomment, 1) AS Controller,\n           MAX(zudate) AS Date,\n           CASE\n               WHEN zuevent = 120 THEN 'Offline'\n               WHEN zuevent = 121 THEN 'Online'\n           END AS Status\n    FROM IF_IF_accessarchive\n    WHERE zucomment != ' ' AND (zuevent = 120 OR zuevent = 121)\n    GROUP BY LEFT(zucomment, 1), zuevent\n) t\nINNER JOIN (\n    SELECT LEFT(zucomment, 1) AS Controller,\n           MAX(zudate) AS MaxDate\n    FROM IF_IF_accessarchive\n    WHERE zucomment != ' ' AND (zuevent = 120 OR zuevent = 121)\n    GROUP BY LEFT(zucomment, 1)\n) m ON t.Controller = m.Controller AND t.Date = m.MaxDate\nleft join IF_IF_portdef ip on t.controller = ip.ponr \norder by t.Controller asc;\n",
+          "refId": "A"
+        }
+      ],
+      "title": "Controller Status",
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-orange"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 10,
+        "y": 32
+      },
+      "id": 30,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "select count(distinct depnumber) from sys.sysdepends",
+          "refId": "A"
+        }
+      ],
+      "title": "Count of Departments",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "mode": "gradient",
+              "type": "color-background"
+            }
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#ffffff"
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Status"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "Offline": {
+                        "color": "red",
+                        "index": 1
+                      },
+                      "Online": {
+                        "color": "dark-green",
+                        "index": 0
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.width",
+                "value": 212
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Date"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 210
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ID"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 176
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 10,
+        "x": 14,
+        "y": 32
+      },
+      "id": 8,
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "SELECT ID,Date, Status\nFROM (\n    SELECT zutdno AS ID,\n           zrtddesc AS Reader,\n           zudate AS Date,\n           CASE\n               WHEN zuevent = 17 THEN 'Offline'\n               WHEN zuevent = 18 THEN 'Online'\n           END AS Status,\n           ROW_NUMBER() OVER (PARTITION BY zutdno ORDER BY zudate DESC) AS RowNum\n    FROM IF_IF_accessarchive\n    WHERE zuevent IN (17, 18)\n) t\nWHERE RowNum = 1;",
+          "refId": "A"
+        }
+      ],
+      "title": "Reader Status",
+      "transformations": [],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "collapsed": false,
+      "datasource": {
+        "type": "mssql",
+        "uid": "InterFlex"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 42
+      },
+      "id": 34,
+      "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "mssql",
+            "uid": "InterFlex"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Attendance ",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-orange"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 5,
+        "x": 0,
+        "y": 43
+      },
+      "id": 40,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "select count(*) from IF_person",
+          "refId": "A"
+        }
+      ],
+      "title": "Total Users",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Absent"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Present"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 7,
+        "x": 5,
+        "y": 43
+      },
+      "id": 38,
+      "options": {
+        "displayLabels": [
+          "value"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true,
+          "values": [
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "select count(distinct ia.zrstpersnr) Present,(select COUNT(*) from IF_Person)-count(distinct ia.zrstpersnr) Absent\nFROM IF_IF_accessarchive ia\n    left join IF_Person ip on ia.zrstpersnr = ip.stpersnr\nwhere zuevent = 0 and cast(ia.zuutcentrydate as date)=CONVERT(date, GETDATE())",
+          "refId": "A"
+        }
+      ],
+      "title": "Present/Absent Pie Chart",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 133,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 25
+              },
+              {
+                "color": "#6ED0E0",
+                "value": 50
+              },
+              {
+                "color": "#EF843C",
+                "value": 75
+              },
+              {
+                "color": "green",
+                "value": 100
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 12,
+        "y": 43
+      },
+      "id": 42,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^count$/",
+          "values": false
+        },
+        "showThresholdLabels": true,
+        "showThresholdMarkers": false
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "SELECT TOP 1048575 \"source\".\"Date\" AS \"Date\", \"source\".\"count\" AS \"count\"\nFROM (select cast(ia.zuutcentrydate as date) as Date, count(distinct ia.zrstpersnr) as count\nFROM IF_IF_accessarchive ia\n    left join IF_Person ip on ia.zrstpersnr = ip.stpersnr\nwhere zuevent = 0\ngroup by cast(ia.zuutcentrydate as date)\n\n) \"source\"\nwhere source.Date = CONVERT(DATE, GETDATE())\nORDER BY \"source\".\"Date\" DESC ",
+          "refId": "A"
+        }
+      ],
+      "title": "Current Attendace (Today)",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Rest"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 18,
+        "y": 43
+      },
+      "id": 44,
+      "options": {
+        "displayLabels": [
+          "name",
+          "value"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "pieType": "donut",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "SELECT CAST(ia.zuutcentrydate AS DATE) AS Date, COUNT(DISTINCT ia.zrstpersnr) '> Half-Day', (SELECT TOP 1048575 \"source\".\"count\" AS \"count\"\nFROM (select cast(ia.zuutcentrydate as date) as Date, count(distinct ia.zrstpersnr) as count\nFROM IF_IF_accessarchive ia\n    left join IF_Person ip on ia.zrstpersnr = ip.stpersnr\nwhere zuevent = 0\ngroup by cast(ia.zuutcentrydate as date)\n\n) \"source\"\nwhere source.Date = CONVERT(DATE, GETDATE())\nORDER BY \"source\".\"Date\" DESC )- COUNT(DISTINCT ia.zrstpersnr) as 'Rest'\nFROM IF_IF_accessarchive ia\nLEFT JOIN IF_Person ip ON ia.zrstpersnr = ip.stpersnr\nWHERE zuevent = 0 \n  AND DATEDIFF(HOUR, (SELECT MIN(CAST(ia_inner.zuutcentrydate AS DATETIME)) FROM IF_IF_accessarchive ia_inner WHERE CAST(ia_inner.zuutcentrydate AS DATE) = CONVERT(DATE, GETDATE())), CAST(ia.zuutcentrydate AS DATETIME)) >4.5 \n  AND CAST(ia.zuutcentrydate AS DATE) = CONVERT(DATE, GETDATE())\nGROUP BY CAST(ia.zuutcentrydate AS DATE);",
+          "refId": "A"
+        }
+      ],
+      "title": "More than Half-Day(Attendance)",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "fillOpacity": 80,
+            "gradientMode": "scheme",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 6
+              },
+              {
+                "color": "green",
+                "value": 7
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 52
+      },
+      "id": 28,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.92,
+        "colorByField": "Attendance",
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xField": "Employee",
+        "xTickLabelRotation": 75,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "SELECT\n    concat(ip.stvorname,' ',ip.stname) AS Employee,\n    COUNT(DISTINCT CONVERT(DATE, IA.zudate)) AS Attendance,\n    MAX(IA.zudate) AS Latest_arrival\nFROM\n    If_IF_Accessarchive ia\n    LEFT JOIN IF_Person ip ON ia.zrstpersnr = ip.stpersnr\nWHERE\n    zuevent = 0\n    AND CONVERT(DATE, IA.zudate) > DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1)\nGROUP BY concat(ip.stvorname,' ',ip.stname)\norder by COUNT(DISTINCT CONVERT(DATE, IA.zudate)) asc;",
+          "refId": "A"
+        }
+      ],
+      "title": "Monthly Attendance of Employees",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "Interflex"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent"
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Status: Half-Day"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "Complete": {
+                        "color": "semi-dark-green",
+                        "index": 0
+                      },
+                      "Pending": {
+                        "color": "red",
+                        "index": 1
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 63
+      },
+      "id": 36,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^Status: Half\\-Day$/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "mssql",
+            "uid": "Interflex"
+          },
+          "format": "table",
+          "rawSql": "select distinct concat(ip.stvorname, ' ', ip.stname) as Name,\n(CASE\nwhen concat(ip.stvorname, ' ', ip.stname) in (SELECT DISTINCT concat(ip.stvorname, ' ', ip.stname) AS Name\nFROM IF_IF_accessarchive ia\nLEFT JOIN IF_Person ip ON ia.zrstpersnr = ip.stpersnr\nWHERE zuevent = 0 \n  AND DATEDIFF(HOUR, (SELECT MIN(CAST(ia_inner.zuutcentrydate AS DATETIME)) FROM IF_IF_accessarchive ia_inner WHERE CAST(ia_inner.zuutcentrydate AS DATE) = CONVERT(DATE, GETDATE())), CAST(ia.zuutcentrydate AS DATETIME)) >4.5 \n  AND CAST(ia.zuutcentrydate AS DATE) = CONVERT(DATE, GETDATE())\nGROUP BY concat(ip.stvorname, ' ', ip.stname), ia.zuutcentrydate) then 'Complete'\nelse 'Pending'\nEND) as 'Status: Half-Day'\nFROM IF_IF_accessarchive ia\n    left join IF_Person ip on ia.zrstpersnr = ip.stpersnr\nwhere zuevent = 0 and cast(ia.zuutcentrydate as date) = CONVERT(DATE, GETDATE())\ngroup by concat(ip.stvorname, ' ', ip.stname), ia.zuutcentrydate\n\n",
+          "refId": "A"
+        }
+      ],
+      "title": "Half-Day Status of Present Employees",
+      "type": "stat"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "InterFlex",
+  "uid": "uDbCqs94k",
+  "version": 7,
+  "weekStart": ""
+}
